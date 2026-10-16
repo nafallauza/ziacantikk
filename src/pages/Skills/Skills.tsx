@@ -1,258 +1,210 @@
 import { motion } from 'framer-motion';
-import './Skills.css';
+import { 
+  TrendingUp, 
+  FileSpreadsheet, 
+  Users
+} from 'lucide-react';
 
-interface SkillBar {
+interface SkillItem {
   name: string;
-  percent: number;
+  level: string;
+  description: string;
+  highlight?: boolean;
 }
 
-interface SkillCategory {
-  title: string;
-  subtitle: string;
-  emoji: string;
-  colorClass: string;
-  skills: SkillBar[];
-}
-
-const skillCategories: SkillCategory[] = [
+const financialSkills: SkillItem[] = [
   {
-    title: 'Microsoft Office',
-    subtitle: 'Produktivitas & Administrasi',
-    emoji: '💻',
-    colorClass: 'pink',
-    skills: [
-      { name: 'Microsoft Word', percent: 90 },
-      { name: 'Microsoft Excel', percent: 85 },
-      { name: 'Microsoft PowerPoint', percent: 92 },
-      { name: 'Google Workspace', percent: 80 },
-    ],
+    name: 'Financial Modeling & Valuation',
+    level: 'Tersertifikasi',
+    description: 'Pelatihan Bloomberg x FEB UB, pemodelan arus kas (DCF), proyeksi keuangan, dan valuasi bisnis.',
+    highlight: true,
   },
   {
-    title: 'Analisis Keuangan',
-    subtitle: 'Bisnis & Finansial',
-    emoji: '📊',
-    colorClass: 'purple',
-    skills: [
-      { name: 'Laporan Keuangan', percent: 82 },
-      { name: 'Analisis Data', percent: 78 },
-      { name: 'Perencanaan Anggaran', percent: 75 },
-      { name: 'Riset Pasar', percent: 70 },
-    ],
+    name: 'Analisis Laporan Keuangan',
+    level: 'Lanjutan',
+    description: 'Evaluasi rasio likuiditas, solvabilitas, profitabilitas, serta kepatuhan standar akuntansi.',
   },
   {
-    title: 'Komunikasi',
-    subtitle: 'Interpersonal & Presentasi',
-    emoji: '🎤',
-    colorClass: 'cream',
-    skills: [
-      { name: 'Public Speaking', percent: 88 },
-      { name: 'Presentasi', percent: 90 },
-      { name: 'Negosiasi', percent: 76 },
-      { name: 'Penulisan', percent: 82 },
-    ],
+    name: 'Pasar Modal & Investasi',
+    level: 'Praktisi Kampus',
+    description: 'Analisis fundamental emiten saham dan simulasi portofolio di Kelompok Studi Pasar Modal.',
   },
   {
-    title: 'Organisasi',
-    subtitle: 'Manajemen & Koordinasi',
-    emoji: '🏛️',
-    colorClass: 'blue',
-    skills: [
-      { name: 'Manajemen Proyek', percent: 80 },
-      { name: 'Koordinasi Tim', percent: 85 },
-      { name: 'Event Management', percent: 78 },
-      { name: 'Problem Solving', percent: 83 },
-    ],
+    name: 'Ekonomi Digital & FinTech',
+    level: 'Riset Nasional',
+    description: 'Penulisan karya ilmiah bertema inovasi pembayaran dan inklusi finansial UMKM (Juara 2 LKTI UGM).',
   },
 ];
 
-const softSkills = [
-  { emoji: '🎯', title: 'Kepemimpinan', desc: 'Memimpin dan menginspirasi tim' },
-  { emoji: '🤝', title: 'Kerja Tim', desc: 'Kolaborasi efektif dalam kelompok' },
-  { emoji: '⏰', title: 'Manajemen Waktu', desc: 'Prioritas dan produktivitas' },
-  { emoji: '💡', title: 'Berpikir Kritis', desc: 'Analisis dan pemecahan masalah' },
-  { emoji: '🎨', title: 'Kreativitas', desc: 'Ide-ide inovatif dan segar' },
-  { emoji: '📝', title: 'Detail Oriented', desc: 'Teliti dan rapi dalam bekerja' },
-  { emoji: '🔄', title: 'Adaptabilitas', desc: 'Fleksibel menghadapi perubahan' },
-  { emoji: '❤️', title: 'Empati', desc: 'Memahami perspektif orang lain' },
+const technicalTools: SkillItem[] = [
+  {
+    name: 'Microsoft Excel (Advanced)',
+    level: 'Mahir',
+    description: 'VLOOKUP/XLOOKUP, Pivot Tables, What-If Analysis, Nested Logic, dan Financial Forecasting.',
+    highlight: true,
+  },
+  {
+    name: 'SPSS & Pengolahan Data Statistik',
+    level: 'Kompeten',
+    description: 'Uji regresi berganda, uji validitas/reliabilitas data riset kuantitatif, dan analisis deskriptif.',
+  },
+  {
+    name: 'Microsoft PowerPoint',
+    level: 'Executive Pitching',
+    description: 'Penyusunan slide presentasi bisnis formal, laporan riset akademik, dan deck kompetisi.',
+  },
+  {
+    name: 'Digital Marketing & Social Strategy',
+    level: 'Tersertifikasi Google',
+    description: 'Strategi kampanye digital dan manajemen komunikasi relasi publik.',
+  },
 ];
 
-const tools = [
-  'Microsoft Word',
-  'Microsoft Excel',
-  'Microsoft PowerPoint',
-  'Google Docs',
-  'Google Sheets',
-  'Canva',
-  'Zoom',
-  'Google Meet',
-  'Trello',
-  'WhatsApp Business',
-  'Instagram',
-  'SPSS',
+const leadershipSkills: SkillItem[] = [
+  {
+    name: 'Diplomasi & Negosiasi Internasional',
+    level: 'Best Delegate (MUN UI)',
+    description: 'Kemampuan bernegosiasi, merumuskan draft resolusi, dan menyelaraskan kepentingan multi-pihak.',
+    highlight: true,
+  },
+  {
+    name: 'Manajemen Kepanitiaan Skala Nasional',
+    level: 'Ketua Pelaksana',
+    description: 'Memimpin kepanitiaan Seminar Ekonomi Kreatif dengan lebih dari 500 peserta delegasi universitas.',
+  },
+  {
+    name: 'Public Speaking & Moderasi',
+    level: 'Teruji',
+    description: 'Berpengalaman menjadi pembicara, moderator kajian ilmiah, dan representasi organisasi kampus.',
+  },
+  {
+    name: 'Pengembangan Keilmuan Mahasiswa',
+    level: 'Kadep BEM FEB',
+    description: 'Merancang kurikulum pelatihan soft skill, kajian ekonomi publik, dan mentoring akademik.',
+  },
 ];
 
-function Skills() {
+export default function Skills() {
   return (
     <motion.div
-      className="skills"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.4 }}
+      transition={{ duration: 0.3 }}
+      className="min-h-screen pt-28 pb-20 px-4 sm:px-6 max-w-4xl mx-auto"
     >
-      {/* ===== Hard Skills ===== */}
-      <section className="skills-section section-padding">
-        <div className="container">
-          <motion.h2
-            className="section-title"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            Keahlian Saya
-          </motion.h2>
-          <motion.p
-            className="section-subtitle"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-          >
-            Kompetensi teknis dan profesional yang saya kembangkan
-          </motion.p>
+      {/* Header */}
+      <section className="mb-12">
+        <span className="text-xs font-semibold text-rose-600 uppercase tracking-wider">Kompetensi</span>
+        <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-zinc-950 mt-1">
+          Keahlian & Penguasaan Perangkat
+        </h1>
+        <p className="mt-3 text-sm sm:text-base text-zinc-600 leading-relaxed max-w-2xl">
+          Pendekatan berbasis kompetensi nyata: kombinasi analisis kuantitatif keuangan, penguasaan tools produktivitas tingkat lanjut, serta kepemimpinan tim.
+        </p>
+      </section>
 
-          <div className="skills-grid">
-            {skillCategories.map((cat, catIdx) => (
-              <motion.div
-                key={cat.title}
-                className="skill-card"
-                initial={{ opacity: 0, y: 25 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: catIdx * 0.1 }}
+      {/* Grid: 3 Pillars */}
+      <div className="space-y-12">
+        {/* Pilar 1: Finansial */}
+        <section>
+          <div className="flex items-center gap-2 mb-4">
+            <span className="p-1.5 rounded-lg bg-rose-50 text-rose-600 border border-rose-100">
+              <TrendingUp size={18} />
+            </span>
+            <h2 className="text-xl font-bold text-zinc-900 tracking-tight">Analisis Keuangan & Akuntansi</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
+            {financialSkills.map((s) => (
+              <div
+                key={s.name}
+                className={`p-5 rounded-2xl border transition-all ${
+                  s.highlight
+                    ? 'bg-white border-rose-200/90 shadow-[0_4px_16px_rgba(244,63,94,0.06)]'
+                    : 'bg-white border-zinc-200/80 shadow-[0_2px_8px_rgba(0,0,0,0.02)]'
+                }`}
               >
-                <div className="skill-card-header">
-                  <div className={`skill-card-icon ${cat.colorClass}`}>
-                    {cat.emoji}
-                  </div>
-                  <div>
-                    <div className="skill-card-title">{cat.title}</div>
-                    <div className="skill-card-subtitle">{cat.subtitle}</div>
-                  </div>
+                <div className="flex items-start justify-between gap-2">
+                  <h3 className="text-sm font-bold text-zinc-900">{s.name}</h3>
+                  <span className={`shrink-0 px-2.5 py-0.5 rounded-full text-[11px] font-medium ${
+                    s.highlight ? 'bg-rose-50 text-rose-700 border border-rose-200/60' : 'bg-zinc-100 text-zinc-600'
+                  }`}>
+                    {s.level}
+                  </span>
                 </div>
-
-                {cat.skills.map((skill, i) => (
-                  <div key={skill.name} className="skill-bar-item">
-                    <div className="skill-bar-label">
-                      <span className="skill-bar-name">{skill.name}</span>
-                      <span className="skill-bar-percent">{skill.percent}%</span>
-                    </div>
-                    <div className="skill-bar-track">
-                      <motion.div
-                        className="skill-bar-fill"
-                        initial={{ scaleX: 0 }}
-                        whileInView={{ scaleX: skill.percent / 100 }}
-                        viewport={{ once: true }}
-                        transition={{
-                          duration: 1,
-                          delay: catIdx * 0.1 + i * 0.1,
-                          ease: [0.4, 0, 0.2, 1],
-                        }}
-                      />
-                    </div>
-                  </div>
-                ))}
-              </motion.div>
+                <p className="mt-2 text-xs text-zinc-600 leading-relaxed">{s.description}</p>
+              </div>
             ))}
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* ===== Soft Skills ===== */}
-      <section className="softskills-section">
-        <div className="container">
-          <motion.h2
-            className="section-title"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            Soft Skills
-          </motion.h2>
-          <motion.p
-            className="section-subtitle"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-          >
-            Kemampuan interpersonal yang mendukung karir saya
-          </motion.p>
+        {/* Pilar 2: Tools & Data */}
+        <section>
+          <div className="flex items-center gap-2 mb-4">
+            <span className="p-1.5 rounded-lg bg-blue-50 text-blue-600 border border-blue-100">
+              <FileSpreadsheet size={18} />
+            </span>
+            <h2 className="text-xl font-bold text-zinc-900 tracking-tight">Perangkat Lunak & Analisis Data</h2>
+          </div>
 
-          <div className="softskills-grid">
-            {softSkills.map((skill, i) => (
-              <motion.div
-                key={skill.title}
-                className="softskill-card"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.06 }}
-                whileHover={{ y: -6 }}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
+            {technicalTools.map((s) => (
+              <div
+                key={s.name}
+                className={`p-5 rounded-2xl border transition-all ${
+                  s.highlight
+                    ? 'bg-white border-blue-200/90 shadow-[0_4px_16px_rgba(59,130,246,0.06)]'
+                    : 'bg-white border-zinc-200/80 shadow-[0_2px_8px_rgba(0,0,0,0.02)]'
+                }`}
               >
-                <div className="softskill-emoji">{skill.emoji}</div>
-                <h4>{skill.title}</h4>
-                <p>{skill.desc}</p>
-              </motion.div>
+                <div className="flex items-start justify-between gap-2">
+                  <h3 className="text-sm font-bold text-zinc-900">{s.name}</h3>
+                  <span className={`shrink-0 px-2.5 py-0.5 rounded-full text-[11px] font-medium ${
+                    s.highlight ? 'bg-blue-50 text-blue-700 border border-blue-200/60' : 'bg-zinc-100 text-zinc-600'
+                  }`}>
+                    {s.level}
+                  </span>
+                </div>
+                <p className="mt-2 text-xs text-zinc-600 leading-relaxed">{s.description}</p>
+              </div>
             ))}
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* ===== Tools ===== */}
-      <section className="tools-section">
-        <div className="container">
-          <motion.h2
-            className="section-title"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            Tools & Aplikasi
-          </motion.h2>
-          <motion.p
-            className="section-subtitle"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-          >
-            Perangkat lunak yang saya gunakan sehari-hari
-          </motion.p>
+        {/* Pilar 3: Soft Skills & Diplomasi */}
+        <section>
+          <div className="flex items-center gap-2 mb-4">
+            <span className="p-1.5 rounded-lg bg-amber-50 text-amber-600 border border-amber-100">
+              <Users size={18} />
+            </span>
+            <h2 className="text-xl font-bold text-zinc-900 tracking-tight">Kepemimpinan, Diplomasi & Komunikasi</h2>
+          </div>
 
-          <div className="tools-grid">
-            {tools.map((tool, i) => (
-              <motion.div
-                key={tool}
-                className="tool-chip"
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: i * 0.04 }}
-                whileHover={{ y: -3 }}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
+            {leadershipSkills.map((s) => (
+              <div
+                key={s.name}
+                className={`p-5 rounded-2xl border transition-all ${
+                  s.highlight
+                    ? 'bg-white border-amber-200/90 shadow-[0_4px_16px_rgba(245,158,11,0.06)]'
+                    : 'bg-white border-zinc-200/80 shadow-[0_2px_8px_rgba(0,0,0,0.02)]'
+                }`}
               >
-                <span className="tool-chip-dot" />
-                {tool}
-              </motion.div>
+                <div className="flex items-start justify-between gap-2">
+                  <h3 className="text-sm font-bold text-zinc-900">{s.name}</h3>
+                  <span className={`shrink-0 px-2.5 py-0.5 rounded-full text-[11px] font-medium ${
+                    s.highlight ? 'bg-amber-50 text-amber-800 border border-amber-200/60' : 'bg-zinc-100 text-zinc-600'
+                  }`}>
+                    {s.level}
+                  </span>
+                </div>
+                <p className="mt-2 text-xs text-zinc-600 leading-relaxed">{s.description}</p>
+              </div>
             ))}
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </motion.div>
   );
 }
-
-export default Skills;

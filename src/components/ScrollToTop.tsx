@@ -2,11 +2,11 @@ import { useState, useEffect } from 'react';
 import { ArrowUp } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-function ScrollToTop() {
+export default function ScrollToTop() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setVisible(window.scrollY > 400);
+    const handleScroll = () => setVisible(window.scrollY > 300);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -20,36 +20,18 @@ function ScrollToTop() {
       {visible && (
         <motion.button
           onClick={scrollToTop}
-          initial={{ opacity: 0, scale: 0.5, y: 20 }}
+          initial={{ opacity: 0, scale: 0.8, y: 10 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.5, y: 20 }}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          transition={{ duration: 0.25 }}
+          exit={{ opacity: 0, scale: 0.8, y: 10 }}
+          whileHover={{ y: -2 }}
+          whileTap={{ scale: 0.95 }}
+          transition={{ type: 'spring', stiffness: 350, damping: 25 }}
           aria-label="Scroll to top"
-          style={{
-            position: 'fixed',
-            bottom: 28,
-            right: 28,
-            width: 48,
-            height: 48,
-            borderRadius: '50%',
-            background: 'linear-gradient(135deg, #F8B4C8, #C8A8E9)',
-            color: 'white',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            boxShadow: '0 4px 20px rgba(200, 168, 233, 0.4)',
-            cursor: 'pointer',
-            border: 'none',
-            zIndex: 999,
-          }}
+          className="fixed bottom-6 right-6 z-40 flex h-10 w-10 items-center justify-center rounded-full bg-white text-zinc-800 border border-zinc-200/90 shadow-[0_4px_16px_rgba(0,0,0,0.08)] hover:bg-zinc-50 hover:text-zinc-950 transition-colors"
         >
-          <ArrowUp size={20} />
+          <ArrowUp size={16} />
         </motion.button>
       )}
     </AnimatePresence>
   );
 }
-
-export default ScrollToTop;
