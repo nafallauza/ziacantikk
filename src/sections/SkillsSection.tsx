@@ -1,8 +1,7 @@
-import { motion } from 'framer-motion';
 import { 
   TrendingUp, 
   FileSpreadsheet, 
-  Users
+  Users 
 } from 'lucide-react';
 
 interface SkillItem {
@@ -84,127 +83,120 @@ const leadershipSkills: SkillItem[] = [
   },
 ];
 
-export default function Skills() {
+export default function SkillsSection() {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.3 }}
-      className="min-h-screen pt-28 pb-20 px-4 sm:px-6 max-w-4xl mx-auto"
-    >
+    <section id="keahlian" className="py-16 px-6 sm:px-10 max-w-4xl mx-auto border-t border-[#E8EFF6]">
       {/* Header */}
-      <section className="mb-12">
-        <span className="text-xs font-semibold text-rose-600 uppercase tracking-wider">Kompetensi</span>
-        <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-zinc-950 mt-1">
+      <div className="mb-12">
+        <span className="text-xs font-semibold text-[#4A6277] uppercase tracking-wider">Kompetensi</span>
+        <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#1E2E3E] mt-1">
           Keahlian & Penguasaan Perangkat
-        </h1>
-        <p className="mt-3 text-sm sm:text-base text-zinc-600 leading-relaxed max-w-2xl">
+        </h2>
+        <p className="mt-2 text-sm text-[#556E84] leading-relaxed max-w-xl">
           Pendekatan berbasis kompetensi nyata: kombinasi analisis kuantitatif keuangan, penguasaan tools produktivitas tingkat lanjut, serta kepemimpinan tim.
         </p>
-      </section>
+      </div>
 
-      {/* Grid: 3 Pillars */}
-      <div className="space-y-12">
+      <div className="space-y-10">
         {/* Pilar 1: Finansial */}
-        <section>
+        <div>
           <div className="flex items-center gap-2 mb-4">
-            <span className="p-1.5 rounded-lg bg-rose-50 text-rose-600 border border-rose-100">
-              <TrendingUp size={18} />
+            <span className="p-1.5 rounded-lg bg-[#EBF1F7] text-[#3E556B] border border-[#D5E1ED]">
+              <TrendingUp size={16} />
             </span>
-            <h2 className="text-xl font-bold text-zinc-900 tracking-tight">Analisis Keuangan & Akuntansi</h2>
+            <h3 className="text-base sm:text-lg font-bold text-[#1E2E3E] tracking-tight">Analisis Keuangan & Akuntansi</h3>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             {financialSkills.map((s) => (
               <div
                 key={s.name}
                 className={`p-5 rounded-2xl border transition-all ${
                   s.highlight
-                    ? 'bg-white border-rose-200/90 shadow-[0_4px_16px_rgba(244,63,94,0.06)]'
-                    : 'bg-white border-zinc-200/80 shadow-[0_2px_8px_rgba(0,0,0,0.02)]'
+                    ? 'bg-white border-[#C9D9E8] shadow-[0_4px_16px_rgba(70,95,120,0.06)]'
+                    : 'bg-white border-[#E2EAF1] shadow-[0_2px_8px_rgba(70,95,120,0.02)]'
                 }`}
               >
                 <div className="flex items-start justify-between gap-2">
-                  <h3 className="text-sm font-bold text-zinc-900">{s.name}</h3>
-                  <span className={`shrink-0 px-2.5 py-0.5 rounded-full text-[11px] font-medium ${
-                    s.highlight ? 'bg-rose-50 text-rose-700 border border-rose-200/60' : 'bg-zinc-100 text-zinc-600'
+                  <h4 className="text-xs sm:text-sm font-bold text-[#1E2E3E]">{s.name}</h4>
+                  <span className={`shrink-0 px-2 py-0.5 rounded-full text-[10px] font-medium ${
+                    s.highlight ? 'bg-[#EBF1F7] text-[#2F4A63] border border-[#D5E1ED]' : 'bg-[#F2F6FA] text-[#556E84]'
                   }`}>
                     {s.level}
                   </span>
                 </div>
-                <p className="mt-2 text-xs text-zinc-600 leading-relaxed">{s.description}</p>
+                <p className="mt-2 text-xs text-[#556E84] leading-relaxed">{s.description}</p>
               </div>
             ))}
           </div>
-        </section>
+        </div>
 
         {/* Pilar 2: Tools & Data */}
-        <section>
+        <div>
           <div className="flex items-center gap-2 mb-4">
-            <span className="p-1.5 rounded-lg bg-blue-50 text-blue-600 border border-blue-100">
-              <FileSpreadsheet size={18} />
+            <span className="p-1.5 rounded-lg bg-[#EBF1F7] text-[#3E556B] border border-[#D5E1ED]">
+              <FileSpreadsheet size={16} />
             </span>
-            <h2 className="text-xl font-bold text-zinc-900 tracking-tight">Perangkat Lunak & Analisis Data</h2>
+            <h3 className="text-base sm:text-lg font-bold text-[#1E2E3E] tracking-tight">Perangkat Lunak & Analisis Data</h3>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             {technicalTools.map((s) => (
               <div
                 key={s.name}
                 className={`p-5 rounded-2xl border transition-all ${
                   s.highlight
-                    ? 'bg-white border-blue-200/90 shadow-[0_4px_16px_rgba(59,130,246,0.06)]'
-                    : 'bg-white border-zinc-200/80 shadow-[0_2px_8px_rgba(0,0,0,0.02)]'
+                    ? 'bg-white border-[#C9D9E8] shadow-[0_4px_16px_rgba(70,95,120,0.06)]'
+                    : 'bg-white border-[#E2EAF1] shadow-[0_2px_8px_rgba(70,95,120,0.02)]'
                 }`}
               >
                 <div className="flex items-start justify-between gap-2">
-                  <h3 className="text-sm font-bold text-zinc-900">{s.name}</h3>
-                  <span className={`shrink-0 px-2.5 py-0.5 rounded-full text-[11px] font-medium ${
-                    s.highlight ? 'bg-blue-50 text-blue-700 border border-blue-200/60' : 'bg-zinc-100 text-zinc-600'
+                  <h4 className="text-xs sm:text-sm font-bold text-[#1E2E3E]">{s.name}</h4>
+                  <span className={`shrink-0 px-2 py-0.5 rounded-full text-[10px] font-medium ${
+                    s.highlight ? 'bg-[#EBF1F7] text-[#2F4A63] border border-[#D5E1ED]' : 'bg-[#F2F6FA] text-[#556E84]'
                   }`}>
                     {s.level}
                   </span>
                 </div>
-                <p className="mt-2 text-xs text-zinc-600 leading-relaxed">{s.description}</p>
+                <p className="mt-2 text-xs text-[#556E84] leading-relaxed">{s.description}</p>
               </div>
             ))}
           </div>
-        </section>
+        </div>
 
-        {/* Pilar 3: Soft Skills & Diplomasi */}
-        <section>
+        {/* Pilar 3: Soft Skills */}
+        <div>
           <div className="flex items-center gap-2 mb-4">
-            <span className="p-1.5 rounded-lg bg-amber-50 text-amber-600 border border-amber-100">
-              <Users size={18} />
+            <span className="p-1.5 rounded-lg bg-[#EBF1F7] text-[#3E556B] border border-[#D5E1ED]">
+              <Users size={16} />
             </span>
-            <h2 className="text-xl font-bold text-zinc-900 tracking-tight">Kepemimpinan, Diplomasi & Komunikasi</h2>
+            <h3 className="text-base sm:text-lg font-bold text-[#1E2E3E] tracking-tight">Kepemimpinan, Diplomasi & Komunikasi</h3>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             {leadershipSkills.map((s) => (
               <div
                 key={s.name}
                 className={`p-5 rounded-2xl border transition-all ${
                   s.highlight
-                    ? 'bg-white border-amber-200/90 shadow-[0_4px_16px_rgba(245,158,11,0.06)]'
-                    : 'bg-white border-zinc-200/80 shadow-[0_2px_8px_rgba(0,0,0,0.02)]'
+                    ? 'bg-white border-[#C9D9E8] shadow-[0_4px_16px_rgba(70,95,120,0.06)]'
+                    : 'bg-white border-[#E2EAF1] shadow-[0_2px_8px_rgba(70,95,120,0.02)]'
                 }`}
               >
                 <div className="flex items-start justify-between gap-2">
-                  <h3 className="text-sm font-bold text-zinc-900">{s.name}</h3>
-                  <span className={`shrink-0 px-2.5 py-0.5 rounded-full text-[11px] font-medium ${
-                    s.highlight ? 'bg-amber-50 text-amber-800 border border-amber-200/60' : 'bg-zinc-100 text-zinc-600'
+                  <h4 className="text-xs sm:text-sm font-bold text-[#1E2E3E]">{s.name}</h4>
+                  <span className={`shrink-0 px-2 py-0.5 rounded-full text-[10px] font-medium ${
+                    s.highlight ? 'bg-[#EBF1F7] text-[#2F4A63] border border-[#D5E1ED]' : 'bg-[#F2F6FA] text-[#556E84]'
                   }`}>
                     {s.level}
                   </span>
                 </div>
-                <p className="mt-2 text-xs text-zinc-600 leading-relaxed">{s.description}</p>
+                <p className="mt-2 text-xs text-[#556E84] leading-relaxed">{s.description}</p>
               </div>
             ))}
           </div>
-        </section>
+        </div>
       </div>
-    </motion.div>
+    </section>
   );
 }

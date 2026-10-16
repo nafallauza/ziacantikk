@@ -9,8 +9,8 @@
   html {
     scroll-behavior: smooth;
     font-family: var(--font-body);
-    background-color: #FAFAFC;
-    color: #0F172A;
+    background-color: #5A738E;
+    color: #1E293B;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -23,21 +23,21 @@
 
 /* Subtle custom scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: #506780;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(148, 163, 184, 0.3);
+  background: rgba(255, 255, 255, 0.4);
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(148, 163, 184, 0.5);
+  background: rgba(255, 255, 255, 0.6);
 }
 
-/* Selection highlight */
+/* Selection highlight in Haneul palette */
 ::selection {
-  background: #FFE4E6;
-  color: #9F1239;
+  background: #DCE7F2;
+  color: #1E2E3E;
 }
