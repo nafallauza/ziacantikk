@@ -3,6 +3,7 @@ import Footer from './components/Footer/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import HeroSection from './sections/HeroSection';
 import ProfileSection from './sections/ProfileSection';
+import PanoramicSpreadHero from './components/ui/panoramic-spread-hero';
 import PortfolioSection from './sections/PortfolioSection';
 import SkillsSection from './sections/SkillsSection';
 import ContactSection from './sections/ContactSection';
@@ -17,7 +18,10 @@ export default function App() {
         <main>
           <HeroSection />
           <ProfileSection />
-          <PortfolioSection />
+          <div id="prestasi">
+            <PanoramicSpreadHero />
+            <PortfolioSection />
+          </div>
           <SkillsSection />
           <ContactSection />
         </main>

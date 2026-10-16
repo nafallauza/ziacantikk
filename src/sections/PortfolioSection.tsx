@@ -16,7 +16,7 @@ export default function PortfolioSection() {
     : certificates.filter((item) => item.category === selectedCategory);
 
   return (
-    <section id="prestasi" className="py-16 px-6 sm:px-10 max-w-4xl mx-auto border-t border-[#E8EFF6]">
+    <section className="py-12 px-6 sm:px-10 max-w-4xl mx-auto border-t border-[#E8EFF6]">
       {/* Header */}
       <div className="mb-10">
         <span className="text-xs font-semibold text-[#4A6277] uppercase tracking-wider">Arsip Prestasi</span>
