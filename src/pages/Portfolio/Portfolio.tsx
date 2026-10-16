@@ -137,6 +137,26 @@ export default function Portfolio() {
                 {activeItem.title}
               </h2>
 
+              {/* Certificate Image preview with fallback */}
+              <div className="mt-4 relative w-full h-48 rounded-2xl overflow-hidden bg-zinc-100 border border-zinc-200/80 flex items-center justify-center">
+                <img
+                  src={activeItem.image}
+                  alt={activeItem.title}
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    (e.target as HTMLElement).style.display = 'none';
+                  }}
+                />
+                <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center pointer-events-none -z-0">
+                  <span className="p-3 rounded-full bg-rose-50 text-rose-600 mb-2 border border-rose-100">
+                    <CheckCircle2 size={24} />
+                  </span>
+                  <span className="text-xs font-semibold text-zinc-800">{activeItem.title}</span>
+                  <span className="text-[11px] text-zinc-400 mt-0.5">{activeItem.category} · {activeItem.date}</span>
+                  <span className="text-[10px] text-rose-500 mt-2 font-medium">Foto sertifikat dapat dimasukkan ke folder /assets/sertifikat</span>
+                </div>
+              </div>
+
               <div className="mt-4 p-4 rounded-2xl bg-zinc-50 border border-zinc-100">
                 <div className="flex items-center gap-2 text-xs font-semibold text-zinc-800 mb-1">
                   <CheckCircle2 size={14} className="text-emerald-500" />

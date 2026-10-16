@@ -48,7 +48,7 @@ export const certificates: Certificate[] = [
     description:
       'Meraih Juara 2 dalam Lomba Karya Tulis Ilmiah tingkat nasional yang diselenggarakan oleh Universitas Gadjah Mada dengan tema "Inovasi Ekonomi Digital untuk Indonesia Maju".',
     date: 'September 2025',
-    image: '/placeholder.svg',
+    image: '/assets/sertifikat/lkti-ugm.jpg',
     category: 'Kompetisi',
   },
   {
@@ -57,7 +57,7 @@ export const certificates: Certificate[] = [
     description:
       'Menyelesaikan pelatihan Financial Modeling & Valuation yang diselenggarakan oleh Bloomberg Indonesia bekerja sama dengan FEB.',
     date: 'Juli 2025',
-    image: '/placeholder.svg',
+    image: '/assets/sertifikat/financial-modeling.jpg',
     category: 'Akademik',
   },
   {
@@ -66,7 +66,7 @@ export const certificates: Certificate[] = [
     description:
       'Mendapatkan penghargaan Best Delegate pada Model United Nations (MUN) yang diselenggarakan oleh Universitas Indonesia.',
     date: 'Mei 2025',
-    image: '/placeholder.svg',
+    image: '/assets/sertifikat/mun-ui.jpg',
     category: 'Kompetisi',
   },
   {
@@ -75,7 +75,7 @@ export const certificates: Certificate[] = [
     description:
       'Mengikuti Seminar Nasional Ekonomi Syariah dengan tema "Peran Ekonomi Syariah dalam Pembangunan Berkelanjutan" bersama narasumber dari Bank Indonesia.',
     date: 'April 2025',
-    image: '/placeholder.svg',
+    image: '/assets/sertifikat/seminar-syariah.jpg',
     category: 'Seminar',
   },
   {
@@ -84,7 +84,7 @@ export const certificates: Certificate[] = [
     description:
       'Meraih penghargaan sebagai Mahasiswa Berprestasi tingkat Fakultas Ekonomi dan Bisnis berdasarkan prestasi akademik dan non-akademik.',
     date: 'Maret 2025',
-    image: '/placeholder.svg',
+    image: '/assets/sertifikat/mawapres.jpg',
     category: 'Akademik',
   },
   {
@@ -93,7 +93,7 @@ export const certificates: Certificate[] = [
     description:
       'Menyelesaikan workshop intensif Digital Marketing & Social Media Strategy yang diselenggarakan oleh Google Indonesia.',
     date: 'Januari 2025',
-    image: '/placeholder.svg',
+    image: '/assets/sertifikat/digital-marketing.jpg',
     category: 'Seminar',
   },
   {
@@ -102,7 +102,7 @@ export const certificates: Certificate[] = [
     description:
       'Memimpin kepanitiaan Seminar Ekonomi Kreatif yang dihadiri lebih dari 500 peserta dari berbagai universitas se-Indonesia.',
     date: 'November 2024',
-    image: '/placeholder.svg',
+    image: '/assets/sertifikat/seminar-ekraf.jpg',
     category: 'Organisasi',
   },
   {
@@ -111,7 +111,7 @@ export const certificates: Certificate[] = [
     description:
       'Menjadi finalis dalam Business Case Competition tingkat nasional yang diselenggarakan oleh SBM ITB dengan studi kasus perusahaan BUMN.',
     date: 'Oktober 2024',
-    image: '/placeholder.svg',
+    image: '/assets/sertifikat/business-case.jpg',
     category: 'Kompetisi',
   },
 ]

@@ -17,14 +17,37 @@ export default function About() {
       className="min-h-screen pt-28 pb-20 px-4 sm:px-6 max-w-4xl mx-auto"
     >
       {/* ===== HEADER ===== */}
-      <section className="mb-12">
-        <span className="text-xs font-semibold text-rose-600 uppercase tracking-wider">Profil Pribadi</span>
-        <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-zinc-950 mt-1">
-          Dedikasi untuk Keunggulan Finansial & Akademik
-        </h1>
-        <p className="mt-4 text-sm sm:text-base text-zinc-600 leading-relaxed max-w-2xl">
-          Saya percaya bahwa data keuangan yang transparan dan analisis akuntansi yang tajam adalah fondasi bagi pertumbuhan bisnis yang berkelanjutan. Di FEB Universitas Brawijaya, saya terus mengasah kompetensi teknis sekaligus memimpin organisasi mahasiswa.
-        </p>
+      <section className="mb-12 flex flex-col-reverse sm:flex-row items-start sm:items-center gap-6 justify-between">
+        <div className="max-w-2xl">
+          <span className="text-xs font-semibold text-rose-600 uppercase tracking-wider">Profil Pribadi</span>
+          <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-zinc-950 mt-1">
+            Dedikasi untuk Keunggulan Finansial & Akademik
+          </h1>
+          <p className="mt-3 text-sm sm:text-base text-zinc-600 leading-relaxed">
+            Saya percaya bahwa data keuangan yang transparan dan analisis akuntansi yang tajam adalah fondasi bagi pertumbuhan bisnis yang berkelanjutan. Di FEB Universitas Brawijaya, saya terus mengasah kompetensi teknis sekaligus memimpin organisasi mahasiswa.
+          </p>
+        </div>
+
+        {/* Profile Avatar with fallback */}
+        <div className="shrink-0 relative group">
+          <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-3xl overflow-hidden bg-rose-50 border-2 border-rose-200/80 shadow-[0_4px_20px_rgba(244,63,94,0.08)] flex items-center justify-center relative">
+            <img
+              src="/assets/foto/profil.jpg"
+              alt="Nur Azizah Safriyani Susanti"
+              className="w-full h-full object-cover"
+              onError={(e) => {
+                (e.target as HTMLElement).style.display = 'none';
+              }}
+            />
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-2 bg-gradient-to-b from-rose-50 to-rose-100/60 -z-0">
+              <span className="text-2xl font-bold text-rose-700">AZ</span>
+              <span className="text-[10px] text-rose-600 font-medium">Zia Cantika</span>
+            </div>
+          </div>
+          <div className="absolute -bottom-1 -right-1 px-2.5 py-0.5 rounded-full bg-white border border-rose-200 text-[10px] font-semibold text-rose-700 shadow-sm">
+            FEB UB
+          </div>
+        </div>
       </section>
 
       {/* ===== BENTO PROFILE & HIGHLIGHTS ===== */}
