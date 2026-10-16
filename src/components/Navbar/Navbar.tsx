@@ -3,15 +3,15 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Sparkles } from 'lucide-react';
 
 const navItems = [
-  { href: '#beranda', label: 'Beranda' },
-  { href: '#profil', label: 'Profil' },
-  { href: '#prestasi', label: 'Prestasi' },
-  { href: '#keahlian', label: 'Keahlian' },
-  { href: '#kontak', label: 'Kontak' },
+  { href: '#home', label: 'Home' },
+  { href: '#about', label: 'About' },
+  { href: '#sertifikat', label: 'Sertifikat' },
+  { href: '#experience', label: 'Experience' },
+  { href: '#contact', label: 'Contact' },
 ];
 
 export default function Navbar() {
-  const [activeSection, setActiveSection] = useState('beranda');
+  const [activeSection, setActiveSection] = useState('home');
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -20,12 +20,12 @@ export default function Navbar() {
       setScrolled(window.scrollY > 30);
 
       // Detect active section
-      const sections = ['beranda', 'profil', 'prestasi', 'keahlian', 'kontak'];
+      const sections = ['home', 'about', 'sertifikat', 'experience', 'contact'];
       for (const section of sections) {
         const el = document.getElementById(section);
         if (el) {
           const rect = el.getBoundingClientRect();
-          if (rect.top <= 180 && rect.bottom >= 180) {
+          if (rect.top <= 200 && rect.bottom >= 150) {
             setActiveSection(section);
             break;
           }
@@ -40,7 +40,8 @@ export default function Navbar() {
 
   const scrollTo = (id: string) => {
     setMenuOpen(false);
-    const el = document.getElementById(id);
+    const target = id.replace('#', '');
+    const el = document.getElementById(target);
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
     }
@@ -49,7 +50,7 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 pt-4 pb-2 transition-all duration-300">
       <motion.nav
-        initial={{ y: -30, opacity: 0 }}
+        initial={false}
         animate={{ y: 0, opacity: 1 }}
         transition={{ type: 'spring', stiffness: 350, damping: 25 }}
         className={`w-full max-w-4xl rounded-full transition-all duration-300 border ${
@@ -69,7 +70,7 @@ export default function Navbar() {
           <span className="font-semibold text-[#203243] tracking-tight text-sm sm:text-base">
             Nur Azizah
           </span>
-          <span className="hidden sm:inline-block text-xs font-normal text-[#6B8298]">· FEB UB</span>
+          <span className="hidden sm:inline-block text-xs font-normal text-[#6B8298]">· FEBI UINSA</span>
         </button>
 
         {/* Desktop Nav Items */}
@@ -101,7 +102,7 @@ export default function Navbar() {
         {/* Action Button */}
         <div className="hidden md:flex items-center">
           <button
-            onClick={() => scrollTo('kontak')}
+            onClick={() => scrollTo('contact')}
             className="text-xs font-medium px-4 py-1.5 rounded-full bg-[#3E556B] hover:bg-[#2F4254] text-white transition-all shadow-sm active:scale-95"
           >
             Hubungi

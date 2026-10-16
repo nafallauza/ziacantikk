@@ -1,199 +1,194 @@
 import { 
   TrendingUp, 
   FileSpreadsheet, 
-  Users 
+  Award, 
+  CheckCircle2,
+  Cpu,
+  Globe2
 } from 'lucide-react';
-
-interface SkillItem {
-  name: string;
-  level: string;
-  description: string;
-  highlight?: boolean;
-}
-
-const financialSkills: SkillItem[] = [
-  {
-    name: 'Financial Modeling & Valuation',
-    level: 'Tersertifikasi',
-    description: 'Pelatihan Bloomberg x FEB UB, pemodelan arus kas (DCF), proyeksi keuangan, dan valuasi bisnis.',
-    highlight: true,
-  },
-  {
-    name: 'Analisis Laporan Keuangan',
-    level: 'Lanjutan',
-    description: 'Evaluasi rasio likuiditas, solvabilitas, profitabilitas, serta kepatuhan standar akuntansi.',
-  },
-  {
-    name: 'Pasar Modal & Investasi',
-    level: 'Praktisi Kampus',
-    description: 'Analisis fundamental emiten saham dan simulasi portofolio di Kelompok Studi Pasar Modal.',
-  },
-  {
-    name: 'Ekonomi Digital & FinTech',
-    level: 'Riset Nasional',
-    description: 'Penulisan karya ilmiah bertema inovasi pembayaran dan inklusi finansial UMKM (Juara 2 LKTI UGM).',
-  },
-];
-
-const technicalTools: SkillItem[] = [
-  {
-    name: 'Microsoft Excel (Advanced)',
-    level: 'Mahir',
-    description: 'VLOOKUP/XLOOKUP, Pivot Tables, What-If Analysis, Nested Logic, dan Financial Forecasting.',
-    highlight: true,
-  },
-  {
-    name: 'SPSS & Pengolahan Data Statistik',
-    level: 'Kompeten',
-    description: 'Uji regresi berganda, uji validitas/reliabilitas data riset kuantitatif, dan analisis deskriptif.',
-  },
-  {
-    name: 'Microsoft PowerPoint',
-    level: 'Executive Pitching',
-    description: 'Penyusunan slide presentasi bisnis formal, laporan riset akademik, dan deck kompetisi.',
-  },
-  {
-    name: 'Digital Marketing & Social Strategy',
-    level: 'Tersertifikasi Google',
-    description: 'Strategi kampanye digital dan manajemen komunikasi relasi publik.',
-  },
-];
-
-const leadershipSkills: SkillItem[] = [
-  {
-    name: 'Diplomasi & Negosiasi Internasional',
-    level: 'Best Delegate (MUN UI)',
-    description: 'Kemampuan bernegosiasi, merumuskan draft resolusi, dan menyelaraskan kepentingan multi-pihak.',
-    highlight: true,
-  },
-  {
-    name: 'Manajemen Kepanitiaan Skala Nasional',
-    level: 'Ketua Pelaksana',
-    description: 'Memimpin kepanitiaan Seminar Ekonomi Kreatif dengan lebih dari 500 peserta delegasi universitas.',
-  },
-  {
-    name: 'Public Speaking & Moderasi',
-    level: 'Teruji',
-    description: 'Berpengalaman menjadi pembicara, moderator kajian ilmiah, dan representasi organisasi kampus.',
-  },
-  {
-    name: 'Pengembangan Keilmuan Mahasiswa',
-    level: 'Kadep BEM FEB',
-    description: 'Merancang kurikulum pelatihan soft skill, kajian ekonomi publik, dan mentoring akademik.',
-  },
-];
 
 export default function SkillsSection() {
   return (
-    <section id="keahlian" className="py-16 px-6 sm:px-10 max-w-4xl mx-auto border-t border-[#E8EFF6]">
+    <section id="keahlian" className="py-16 px-6 sm:px-10 max-w-5xl mx-auto border-t border-[#E8EFF6]">
       {/* Header */}
-      <div className="mb-12">
-        <span className="text-xs font-semibold text-[#4A6277] uppercase tracking-wider">Kompetensi</span>
+      <div className="max-w-2xl mb-12">
+        <span className="text-xs font-semibold text-[#4A6277] uppercase tracking-wider">
+          Matriks Kompetensi
+        </span>
         <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#1E2E3E] mt-1">
-          Keahlian & Penguasaan Perangkat
+          Keahlian Analitis, Perangkat & Kepemimpinan
         </h2>
-        <p className="mt-2 text-sm text-[#556E84] leading-relaxed max-w-xl">
-          Pendekatan berbasis kompetensi nyata: kombinasi analisis kuantitatif keuangan, penguasaan tools produktivitas tingkat lanjut, serta kepemimpinan tim.
+        <p className="mt-2.5 text-xs sm:text-sm text-[#556E84] leading-relaxed">
+          Kombinasi kompetensi analisis ekonomi syariah, pemahaman pasar modal, riset data SPSS/E-views, penguasaan instrumen teknologi, serta kemampuan komunikasi publik.
         </p>
       </div>
 
-      <div className="space-y-10">
-        {/* Pilar 1: Finansial */}
-        <div>
-          <div className="flex items-center gap-2 mb-4">
-            <span className="p-1.5 rounded-lg bg-[#EBF1F7] text-[#3E556B] border border-[#D5E1ED]">
-              <TrendingUp size={16} />
-            </span>
-            <h3 className="text-base sm:text-lg font-bold text-[#1E2E3E] tracking-tight">Analisis Keuangan & Akuntansi</h3>
+      {/* Bento Grid Layout (Strict Anti-AI Slop: No 90% bars, substantive context) */}
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
+        {/* Large Card: Analisis Finansial & Standar Akuntansi (7 cols) */}
+        <div className="md:col-span-7 p-6 sm:p-7 rounded-3xl bg-white border border-[#E2EAF1] shadow-xs flex flex-col justify-between">
+          <div>
+            <div className="flex items-center justify-between mb-4">
+              <span className="p-2 rounded-xl bg-[#EBF1F7] text-[#3E556B] border border-[#D5E1ED]">
+                <TrendingUp size={18} />
+              </span>
+              <span className="px-3 py-1 rounded-full bg-[#EBF1F7] text-[#2F4A63] border border-[#D5E1ED] text-[10px] font-semibold">
+                Fokus Akademik FEBI UINSA
+              </span>
+            </div>
+
+            <h3 className="text-lg font-bold text-[#1E2E3E] tracking-tight">
+              Lembaga Keuangan Syariah & Analisis Data
+            </h3>
+            <p className="mt-2 text-xs text-[#556E84] leading-relaxed">
+              Keahlian dalam menelaah operasional lembaga keuangan syariah, instrumen pasar modal, serta analisis data kuantitatif menggunakan SPSS dan E-views untuk pengujian empiris.
+            </p>
+
+            <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+              <div className="p-3 rounded-xl bg-[#F8FAFC] border border-[#E8EFF6]">
+                <div className="text-xs font-bold text-[#1E2E3E] flex items-center gap-1.5">
+                  <CheckCircle2 size={13} className="text-[#4A6277]" />
+                  Evaluasi Rasio Keuangan
+                </div>
+                <p className="text-[11px] text-[#6B8298] mt-1">Likuiditas, solvabilitas, leverage, dan profitabilitas emiten.</p>
+              </div>
+
+              <div className="p-3 rounded-xl bg-[#F8FAFC] border border-[#E8EFF6]">
+                <div className="text-xs font-bold text-[#1E2E3E] flex items-center gap-1.5">
+                  <CheckCircle2 size={13} className="text-[#4A6277]" />
+                  Etika Profesi Perbankan
+                </div>
+                <p className="text-[11px] text-[#6B8298] mt-1">Tersertifikasi Ikatan Bankir Indonesia (IBI 2025).</p>
+              </div>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-            {financialSkills.map((s) => (
-              <div
-                key={s.name}
-                className={`p-5 rounded-2xl border transition-all ${
-                  s.highlight
-                    ? 'bg-white border-[#C9D9E8] shadow-[0_4px_16px_rgba(70,95,120,0.06)]'
-                    : 'bg-white border-[#E2EAF1] shadow-[0_2px_8px_rgba(70,95,120,0.02)]'
-                }`}
-              >
-                <div className="flex items-start justify-between gap-2">
-                  <h4 className="text-xs sm:text-sm font-bold text-[#1E2E3E]">{s.name}</h4>
-                  <span className={`shrink-0 px-2 py-0.5 rounded-full text-[10px] font-medium ${
-                    s.highlight ? 'bg-[#EBF1F7] text-[#2F4A63] border border-[#D5E1ED]' : 'bg-[#F2F6FA] text-[#556E84]'
-                  }`}>
-                    {s.level}
-                  </span>
-                </div>
-                <p className="mt-2 text-xs text-[#556E84] leading-relaxed">{s.description}</p>
-              </div>
-            ))}
+          <div className="mt-6 pt-4 border-t border-[#EEF3F8] text-[11px] text-[#7E96AC] flex items-center justify-between">
+            <span>Standar Pelaporan Keuangan</span>
+            <span className="font-semibold text-[#4A6277]">PSAK · IFRS Basis</span>
           </div>
         </div>
 
-        {/* Pilar 2: Tools & Data */}
-        <div>
-          <div className="flex items-center gap-2 mb-4">
-            <span className="p-1.5 rounded-lg bg-[#EBF1F7] text-[#3E556B] border border-[#D5E1ED]">
-              <FileSpreadsheet size={16} />
-            </span>
-            <h3 className="text-base sm:text-lg font-bold text-[#1E2E3E] tracking-tight">Perangkat Lunak & Analisis Data</h3>
+        {/* Medium Card: Pasar Modal Syariah & CIMM (5 cols) */}
+        <div className="md:col-span-5 p-6 sm:p-7 rounded-3xl bg-[#2D4052] text-white shadow-[0_4px_20px_rgba(45,64,82,0.15)] flex flex-col justify-between">
+          <div>
+            <div className="flex items-center justify-between mb-4">
+              <span className="p-2 rounded-xl bg-white/10 text-[#AFC5D9] border border-white/15">
+                <Award size={18} />
+              </span>
+              <span className="px-2.5 py-0.5 rounded-full bg-white/15 text-white text-[10px] font-semibold border border-white/20">
+                IARFC Certified
+              </span>
+            </div>
+
+            <h3 className="text-lg font-bold tracking-tight text-white">
+              Pasar Modal & Reksa Dana Syariah
+            </h3>
+            <p className="mt-2 text-xs text-[#DCE7F2] leading-relaxed">
+              Memegang sertifikasi Certified Islamic Mutual Fund (CIMM) dari IARFC. Berpengalaman dalam pengelolaan teknis kompetisi trading saham syariah dan edukasi pasar modal di FEBI.
+            </p>
+
+            <div className="mt-5 space-y-2">
+              <div className="flex items-center gap-2 text-xs text-[#E8F0F8]">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#89A9C7]" />
+                <span>Instrumen Sukuk & Reksa Dana Syariah</span>
+              </div>
+              <div className="flex items-center gap-2 text-xs text-[#E8F0F8]">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#89A9C7]" />
+                <span>Panitia Diesnatalis GIS Divisi Trading 2025</span>
+              </div>
+              <div className="flex items-center gap-2 text-xs text-[#E8F0F8]">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#89A9C7]" />
+                <span>Fasilitator Sekolah Pasar Modal Syariah</span>
+              </div>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-            {technicalTools.map((s) => (
-              <div
-                key={s.name}
-                className={`p-5 rounded-2xl border transition-all ${
-                  s.highlight
-                    ? 'bg-white border-[#C9D9E8] shadow-[0_4px_16px_rgba(70,95,120,0.06)]'
-                    : 'bg-white border-[#E2EAF1] shadow-[0_2px_8px_rgba(70,95,120,0.02)]'
-                }`}
-              >
-                <div className="flex items-start justify-between gap-2">
-                  <h4 className="text-xs sm:text-sm font-bold text-[#1E2E3E]">{s.name}</h4>
-                  <span className={`shrink-0 px-2 py-0.5 rounded-full text-[10px] font-medium ${
-                    s.highlight ? 'bg-[#EBF1F7] text-[#2F4A63] border border-[#D5E1ED]' : 'bg-[#F2F6FA] text-[#556E84]'
-                  }`}>
-                    {s.level}
-                  </span>
-                </div>
-                <p className="mt-2 text-xs text-[#556E84] leading-relaxed">{s.description}</p>
-              </div>
-            ))}
+          <div className="mt-6 pt-4 border-t border-white/15 text-[11px] text-[#AFC5D9]">
+            IARFC Indonesia · Sertifikat No. Terdaftar
           </div>
         </div>
 
-        {/* Pilar 3: Soft Skills */}
-        <div>
-          <div className="flex items-center gap-2 mb-4">
-            <span className="p-1.5 rounded-lg bg-[#EBF1F7] text-[#3E556B] border border-[#D5E1ED]">
-              <Users size={16} />
-            </span>
-            <h3 className="text-base sm:text-lg font-bold text-[#1E2E3E] tracking-tight">Kepemimpinan, Diplomasi & Komunikasi</h3>
+        {/* Medium Card: Microsoft Excel & Tools (5 cols) */}
+        <div className="md:col-span-5 p-6 sm:p-7 rounded-3xl bg-white border border-[#E2EAF1] shadow-xs flex flex-col justify-between">
+          <div>
+            <div className="flex items-center justify-between mb-4">
+              <span className="p-2 rounded-xl bg-[#EBF1F7] text-[#3E556B] border border-[#D5E1ED]">
+                <FileSpreadsheet size={18} />
+              </span>
+              <span className="px-2.5 py-0.5 rounded-full bg-[#EBF1F7] text-[#2F4A63] text-[10px] font-semibold">
+                Tingkat Lanjut
+              </span>
+            </div>
+
+            <h3 className="text-base sm:text-lg font-bold text-[#1E2E3E] tracking-tight">
+              Excel Lanjutan & Pemodelan Data
+            </h3>
+            <p className="mt-2 text-xs text-[#556E84] leading-relaxed">
+              Pengolahan data finansial kompleks menggunakan fungsi formula lanjut (XLOOKUP, INDEX/MATCH, Dynamic Arrays), Pivot Table, dan Scenario Manager.
+            </p>
+
+            <div className="mt-4 flex flex-wrap gap-1.5">
+              {['Pivot Tables', 'XLOOKUP / INDEX', 'Financial Math', 'Data Validation', 'Scenario Manager'].map((t) => (
+                <span key={t} className="px-2.5 py-1 rounded-lg bg-[#F0F5FA] border border-[#DDE7F0] text-[11px] font-medium text-[#4A6277]">
+                  {t}
+                </span>
+              ))}
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-            {leadershipSkills.map((s) => (
-              <div
-                key={s.name}
-                className={`p-5 rounded-2xl border transition-all ${
-                  s.highlight
-                    ? 'bg-white border-[#C9D9E8] shadow-[0_4px_16px_rgba(70,95,120,0.06)]'
-                    : 'bg-white border-[#E2EAF1] shadow-[0_2px_8px_rgba(70,95,120,0.02)]'
-                }`}
-              >
-                <div className="flex items-start justify-between gap-2">
-                  <h4 className="text-xs sm:text-sm font-bold text-[#1E2E3E]">{s.name}</h4>
-                  <span className={`shrink-0 px-2 py-0.5 rounded-full text-[10px] font-medium ${
-                    s.highlight ? 'bg-[#EBF1F7] text-[#2F4A63] border border-[#D5E1ED]' : 'bg-[#F2F6FA] text-[#556E84]'
-                  }`}>
-                    {s.level}
-                  </span>
-                </div>
-                <p className="mt-2 text-xs text-[#556E84] leading-relaxed">{s.description}</p>
-              </div>
-            ))}
+          <div className="mt-6 pt-4 border-t border-[#EEF3F8] text-[11px] text-[#7E96AC]">
+            Pemrosesan Model Keuangan & Rekap Data
+          </div>
+        </div>
+
+        {/* Card: Sains, Robotika & Instrumentasi (4 cols) */}
+        <div className="md:col-span-4 p-6 sm:p-7 rounded-3xl bg-white border border-[#E2EAF1] shadow-xs flex flex-col justify-between">
+          <div>
+            <div className="flex items-center justify-between mb-4">
+              <span className="p-2 rounded-xl bg-[#EBF1F7] text-[#3E556B] border border-[#D5E1ED]">
+                <Cpu size={18} />
+              </span>
+              <span className="px-2.5 py-0.5 rounded-full bg-[#EBF1F7] text-[#2F4A63] text-[10px] font-semibold">
+                Sains & Teknologi
+              </span>
+            </div>
+
+            <h3 className="text-base font-bold text-[#1E2E3E] tracking-tight">
+              Instrumen Lab & Logika Robotika
+            </h3>
+            <p className="mt-2 text-xs text-[#556E84] leading-relaxed">
+              Juara Kejuaraan Robotika Nasional (KEJURNAS) 2023. Memiliki sertifikat kelulusan pelatihan pengoperasian instrumen laboratorium sains dari Universitas Negeri Malang (UM).
+            </p>
+          </div>
+
+          <div className="mt-5 pt-3 border-t border-[#EEF3F8] text-[11px] text-[#6B8298]">
+            Sertifikasi UM & Piagam KEJURNAS 2023
+          </div>
+        </div>
+
+        {/* Card: Komunikasi Publik & Bahasa (3 cols) */}
+        <div className="md:col-span-3 p-6 sm:p-7 rounded-3xl bg-white border border-[#E2EAF1] shadow-xs flex flex-col justify-between">
+          <div>
+            <div className="flex items-center justify-between mb-4">
+              <span className="p-2 rounded-xl bg-[#EBF1F7] text-[#3E556B] border border-[#D5E1ED]">
+                <Globe2 size={18} />
+              </span>
+              <span className="px-2 py-0.5 rounded-full bg-[#EBF1F7] text-[#2F4A63] text-[10px] font-semibold">
+                Bahasa
+              </span>
+            </div>
+
+            <h3 className="text-base font-bold text-[#1E2E3E] tracking-tight">
+              Komunikasi & Bahasa
+            </h3>
+            <p className="mt-2 text-xs text-[#556E84] leading-relaxed">
+              Tersertifikasi English Proficiency dari Brilliant English Course Pare & pelatihan Webinar Public Speaking Nasional 2025.
+            </p>
+          </div>
+
+          <div className="mt-5 pt-3 border-t border-[#EEF3F8] text-[11px] text-[#4A6277] font-semibold">
+            Brilliant Pare Certified
           </div>
         </div>
       </div>

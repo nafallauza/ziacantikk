@@ -1,13 +1,13 @@
 import { useState, type FormEvent } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, MapPin, Send, Check } from 'lucide-react';
+import { Send, Check, Mail, MapPin, ArrowUpRight } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
     name: '',
-    email: '',
-    subject: '',
+    contact: '',
+    topic: 'Diskusi Riset Keuangan',
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
@@ -18,10 +18,10 @@ export default function ContactSection() {
 
     try {
       confetti({
-        particleCount: 50,
-        spread: 60,
-        origin: { y: 0.8 },
-        colors: ['#4A6277', '#89A9C7', '#B6CDDE', '#3E556B'],
+        particleCount: 60,
+        spread: 70,
+        origin: { y: 0.7 },
+        colors: ['#4A6277', '#89A9C7', '#B6CDDE', '#FFFFFF'],
       });
     } catch {
       // ignore
@@ -29,115 +29,133 @@ export default function ContactSection() {
 
     setTimeout(() => {
       setSubmitted(false);
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    }, 3500);
+      setFormData({ name: '', contact: '', topic: 'Diskusi Riset Keuangan', message: '' });
+    }, 4000);
   };
 
   return (
-    <section id="kontak" className="py-20 px-6 sm:px-10 max-w-4xl mx-auto border-t border-[#E8EFF6]">
-      {/* Header */}
-      <div className="text-center mb-12">
-        <span className="text-xs font-semibold text-[#4A6277] uppercase tracking-wider">Terhubung</span>
-        <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#1E2E3E] mt-1">
-          Hubungi Saya
-        </h2>
-        <p className="mt-2 text-sm text-[#556E84] leading-relaxed max-w-md mx-auto">
-          Terbuka untuk diskusi akademik, kesempatan magang, kolaborasi riset, atau sekadar berbagi pengalaman dan bertukar sapa.
-        </p>
-      </div>
+    <section id="contact" className="relative w-full pt-16 pb-24 px-4 sm:px-6 overflow-hidden">
+      <div id="kontak" className="sr-only" />
+      {/* Mountain Background Banner — 1:1 Reference from Haneul Design */}
+      <div className="relative w-full max-w-4xl mx-auto rounded-[36px] overflow-hidden min-h-[640px] sm:min-h-[700px] flex items-center justify-center border border-white/60 shadow-[0_20px_60px_rgba(30,46,62,0.25)]">
+        {/* Alpine Mountain Photo */}
+        <img
+          src="/assets/mountain-alpine.jpg"
+          alt="Majestic Alpine Mountains"
+          className="absolute inset-0 w-full h-full object-cover object-center filter saturate-90 brightness-95"
+        />
 
-      {/* Main Glassmorphism Contact Box — Modeled directly after the Haneul design card */}
-      <div className="max-w-xl mx-auto relative rounded-[32px] bg-gradient-to-b from-[#F0F5FA]/90 to-[#E4EDF5]/90 border border-white/80 p-8 sm:p-10 shadow-[0_12px_40px_rgba(70,95,120,0.08)] backdrop-blur-md">
-        <div className="text-center mb-6">
-          <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-[#1E2E3E]">
-            Mulai Percakapan
-          </h3>
-          <p className="text-xs text-[#556E84] mt-1">
-            Silakan tinggalkan pesan Anda di bawah ini
-          </p>
-        </div>
+        {/* Ambient Overlay Gradients for Depth & Mist */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#3A536B]/40 via-transparent to-[#1D2B38]/70 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-white/90 via-white/40 to-transparent pointer-events-none" />
 
-        <form onSubmit={handleSubmit} className="space-y-3.5">
-          <div>
-            <input
-              type="text"
-              required
-              placeholder="Nama lengkap Anda"
-              value={formData.name}
-              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              className="w-full px-5 py-3 rounded-full bg-white/95 border border-[#D5E1ED] text-xs sm:text-sm text-[#1E2E3E] placeholder:text-[#8EA3B8] focus:outline-none focus:ring-2 focus:ring-[#4A6277]/25 focus:border-[#4A6277] transition-all shadow-[0_2px_8px_rgba(70,95,120,0.02)]"
-            />
+        {/* Floating Frosted Glass Card (Exact Haneul Consultation Card) */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, type: 'spring', stiffness: 300, damping: 25 }}
+          className="relative z-10 w-full max-w-md mx-4 p-7 sm:p-9 rounded-[32px] bg-white/25 backdrop-blur-xl border border-white/60 shadow-[0_16px_50px_rgba(15,28,42,0.3)] text-white"
+        >
+          {/* Card Header */}
+          <div className="text-center mb-6">
+            <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-white drop-shadow-sm font-heading">
+              Begin your journey today
+            </h3>
+            <p className="mt-2 text-xs sm:text-sm text-white/90 font-light leading-relaxed">
+              Pilih topik dan hubungi langsung Nur Azizah untuk kolaborasi akademik, riset pasar modal, atau sekadar berdiskusi.
+            </p>
           </div>
 
-          <div>
-            <input
-              type="email"
-              required
-              placeholder="Alamat email Anda"
-              value={formData.email}
-              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              className="w-full px-5 py-3 rounded-full bg-white/95 border border-[#D5E1ED] text-xs sm:text-sm text-[#1E2E3E] placeholder:text-[#8EA3B8] focus:outline-none focus:ring-2 focus:ring-[#4A6277]/25 focus:border-[#4A6277] transition-all shadow-[0_2px_8px_rgba(70,95,120,0.02)]"
-            />
-          </div>
+          {/* Form with Rounded Pill Inputs */}
+          <form onSubmit={handleSubmit} className="space-y-3.5">
+            <div>
+              <input
+                type="text"
+                required
+                placeholder="nama lengkap"
+                value={formData.name}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                className="w-full px-5 py-3 rounded-full bg-white/95 border border-white/80 text-xs sm:text-sm text-[#1E2E3E] placeholder:text-[#8EA3B8] focus:outline-none focus:ring-2 focus:ring-[#4A6277]/40 shadow-sm transition-all"
+              />
+            </div>
 
-          <div>
-            <input
-              type="text"
-              required
-              placeholder="Subjek / Perihal pesan"
-              value={formData.subject}
-              onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-              className="w-full px-5 py-3 rounded-full bg-white/95 border border-[#D5E1ED] text-xs sm:text-sm text-[#1E2E3E] placeholder:text-[#8EA3B8] focus:outline-none focus:ring-2 focus:ring-[#4A6277]/25 focus:border-[#4A6277] transition-all shadow-[0_2px_8px_rgba(70,95,120,0.02)]"
-            />
-          </div>
+            <div>
+              <input
+                type="text"
+                required
+                placeholder="nomor whatsapp / email"
+                value={formData.contact}
+                onChange={(e) => setFormData({ ...formData, contact: e.target.value })}
+                className="w-full px-5 py-3 rounded-full bg-white/95 border border-white/80 text-xs sm:text-sm text-[#1E2E3E] placeholder:text-[#8EA3B8] focus:outline-none focus:ring-2 focus:ring-[#4A6277]/40 shadow-sm transition-all"
+              />
+            </div>
 
-          <div>
-            <textarea
-              required
-              rows={3}
-              placeholder="Tuliskan pesan atau pertanyaan Anda di sini..."
-              value={formData.message}
-              onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-              className="w-full px-5 py-3 rounded-2xl bg-white/95 border border-[#D5E1ED] text-xs sm:text-sm text-[#1E2E3E] placeholder:text-[#8EA3B8] focus:outline-none focus:ring-2 focus:ring-[#4A6277]/25 focus:border-[#4A6277] transition-all resize-none shadow-[0_2px_8px_rgba(70,95,120,0.02)]"
-            />
-          </div>
+            <div className="relative">
+              <select
+                value={formData.topic}
+                onChange={(e) => setFormData({ ...formData, topic: e.target.value })}
+                className="w-full px-5 py-3 rounded-full bg-white/95 border border-white/80 text-xs sm:text-sm text-[#1E2E3E] focus:outline-none focus:ring-2 focus:ring-[#4A6277]/40 shadow-sm transition-all appearance-none pr-10 cursor-pointer"
+              >
+                <option value="Diskusi Riset Keuangan">Diskusi Riset Ekonomi Syariah & Finansial</option>
+                <option value="Pasar Modal Syariah">Kepanitiaan / Edukasi Pasar Modal Syariah</option>
+                <option value="Kesempatan Magang / Kolaborasi">Peluang Magang & Kolaborasi Tim</option>
+                <option value="Pertukaran Pengalaman">Sapaan & Pertukaran Pengalaman</option>
+              </select>
+              <ArrowUpRight
+                size={16}
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-[#4A6277] pointer-events-none"
+              />
+            </div>
 
-          <motion.button
-            type="submit"
-            whileHover={{ scale: 1.01 }}
-            whileTap={{ scale: 0.99 }}
-            className={`w-full py-3.5 rounded-full font-medium text-xs sm:text-sm flex items-center justify-center gap-2 transition-all duration-200 ${
-              submitted
-                ? 'bg-emerald-600 text-white'
-                : 'bg-[#3E556B] hover:bg-[#2E4254] text-white shadow-[0_4px_14px_rgba(62,85,107,0.25)]'
-            }`}
-          >
-            {submitted ? (
-              <>
-                <Check size={16} />
-                <span>Pesan Terkirim dengan Sukses!</span>
-              </>
-            ) : (
-              <>
-                <Send size={14} />
-                <span>Kirim Pesan Sekarang</span>
-              </>
-            )}
-          </motion.button>
-        </form>
+            <div>
+              <textarea
+                required
+                rows={3}
+                placeholder="tuliskan pesan singkat Anda..."
+                value={formData.message}
+                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                className="w-full px-5 py-3 rounded-2xl bg-white/95 border border-white/80 text-xs sm:text-sm text-[#1E2E3E] placeholder:text-[#8EA3B8] focus:outline-none focus:ring-2 focus:ring-[#4A6277]/40 shadow-sm transition-all resize-none"
+              />
+            </div>
 
-        {/* Quick Contact Info */}
-        <div className="mt-8 pt-6 border-t border-[#D5E1ED]/80 flex flex-wrap items-center justify-center gap-4 text-xs text-[#556E84]">
-          <a href="mailto:azizah@example.com" className="flex items-center gap-1.5 hover:text-[#1E2E3E] transition-colors">
-            <Mail size={14} className="text-[#4A6277]" />
-            <span>azizah@example.com</span>
-          </a>
-          <span className="text-[#BACDD8]">•</span>
-          <div className="flex items-center gap-1.5">
-            <MapPin size={14} className="text-[#4A6277]" />
-            <span>FEB Universitas Brawijaya</span>
+            {/* Pill Submit Button (Modeled after "Book Free Consultation") */}
+            <motion.button
+              type="submit"
+              whileHover={{ scale: 1.01 }}
+              whileTap={{ scale: 0.98 }}
+              className={`w-full py-3.5 rounded-full font-semibold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all duration-200 shadow-md ${
+                submitted
+                  ? 'bg-emerald-600 text-white'
+                  : 'bg-[#435C74] hover:bg-[#344A5E] text-white shadow-[0_4px_16px_rgba(20,38,56,0.3)]'
+              }`}
+            >
+              {submitted ? (
+                <>
+                  <Check size={16} />
+                  <span>Pesan Terkirim dengan Sukses!</span>
+                </>
+              ) : (
+                <>
+                  <Send size={13} />
+                  <span>Kirim Pesan Sekarang</span>
+                </>
+              )}
+            </motion.button>
+          </form>
+
+          {/* Subtext info */}
+          <div className="mt-5 pt-4 border-t border-white/30 flex items-center justify-between text-[11px] text-white/90">
+            <span className="flex items-center gap-1">
+              <MapPin size={12} />
+              FEBI UIN Sunan Ampel Surabaya
+            </span>
+            <span className="flex items-center gap-1 font-medium">
+              <Mail size={12} />
+              Surabaya, ID
+            </span>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
