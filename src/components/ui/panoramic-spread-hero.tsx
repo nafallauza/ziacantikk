@@ -23,83 +23,82 @@ export interface CertificateCardItem {
   alt: string;
 }
 
-// Koleksi Sertifikat & Penghargaan Nur Azizah (FEB UB)
+// 8 Sertifikat Nyata Pilihan Nur Azizah Safriyani Susanti
 const CERTIFICATES: CertificateCardItem[] = [
   {
     id: 1,
-    title: "Juara 2 LKTI Nasional",
-    issuer: "Universitas Gadjah Mada",
-    date: "Sep 2025",
+    title: "Kejuaraan Robotika Nasional",
+    issuer: "KEJURNAS 2023",
+    date: "2023",
     category: "Kompetisi",
-    src: "https://images.unsplash.com/photo-1569683795645-b62e50fbf103?auto=format&fit=crop&w=800&q=80",
-    alt: "Juara 2 LKTI UGM",
+    src: "/assets/sertifikat/Piagam_Penghargaan_Kejuaraan_Robotika_Nasional_KEJURNAS_2023_Nur_Azizah.jpg",
+    alt: "Piagam Kejuaraan Robotika Nasional",
   },
   {
     id: 2,
-    title: "Best Delegate MUN UI",
-    issuer: "Universitas Indonesia",
-    date: "Mei 2025",
-    category: "Diplomasi",
-    src: "https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=800&q=80",
-    alt: "MUN UI Best Delegate",
+    title: "Sertifikasi CIMM Finansial",
+    issuer: "IARFC INDONESIA",
+    date: "2025",
+    category: "Akademik",
+    src: "/assets/sertifikat/Sertifikat_CIMM_IARFC_INDONESIA_Nur_Azizah.jpg",
+    alt: "Sertifikat CIMM IARFC Indonesia",
   },
   {
     id: 3,
-    title: "Financial Modeling",
-    issuer: "Bloomberg x FEB UB",
-    date: "Jul 2025",
-    category: "Akademik",
-    src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
-    alt: "Financial Modeling Bloomberg",
+    title: "Certificate of English",
+    issuer: "Brilliant English Course",
+    date: "2025",
+    category: "Bahasa",
+    src: "/assets/sertifikat/Certificate_Bahasa_Brilliant_English_Course_Nur_Azizah.jpg",
+    alt: "Certificate Brilliant English Course",
   },
   {
     id: 4,
-    title: "Mahasiswa Berprestasi",
-    issuer: "FEB Univ. Brawijaya",
-    date: "Mar 2025",
-    category: "Mawapres",
-    src: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80",
-    alt: "Mawapres FEB UB",
+    title: "Panitia Trading GIS",
+    issuer: "DIESNAT GIS 2025",
+    date: "2025",
+    category: "Finansial",
+    src: "/assets/sertifikat/Sertifikat_Panitia_Trading_DIESNAT_GIS_2025.jpg",
+    alt: "Sertifikat Panitia Trading GIS",
   },
   {
     id: 5,
-    title: "Ekonomi Syariah",
-    issuer: "Bank Indonesia",
-    date: "Apr 2025",
+    title: "Semnas Pendidikan 2025",
+    issuer: "Universitas Negeri Surabaya",
+    date: "2025",
     category: "Seminar",
-    src: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80",
-    alt: "Seminar Bank Indonesia",
+    src: "/assets/sertifikat/Sertifikat_Seminar_Nasioanl_Pendidikan_2025_UNESA_Nur_Azizah.jpg",
+    alt: "Seminar Nasional Pendidikan UNESA",
   },
   {
     id: 6,
-    title: "Digital Marketing",
-    issuer: "Google Indonesia",
-    date: "Jan 2025",
-    category: "Pelatihan",
-    src: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&w=800&q=80",
-    alt: "Google Digital Marketing",
+    title: "Webinar Public Speaking",
+    issuer: "Nasional 2025",
+    date: "2025",
+    category: "Soft Skill",
+    src: "/assets/sertifikat/Sertifikat_Webunar_Nasional_Public_Speaking_2025.jpg",
+    alt: "Webinar Public Speaking 2025",
   },
   {
     id: 7,
-    title: "Ketua Seminar Ekraf",
-    issuer: "500+ Delegasi Kampus",
-    date: "Nov 2024",
-    category: "Organisasi",
-    src: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80",
-    alt: "Kepanitiaan Seminar Nasional",
+    title: "Pelatihan Lab Sains UM",
+    issuer: "Universitas Negeri Malang",
+    date: "2024",
+    category: "Pelatihan",
+    src: "/assets/sertifikat/Sertifikat_Pelatihan_Alat-alat_Lab_Sains_UM_Nur_Azizah.jpg",
+    alt: "Pelatihan Alat Lab Sains UM",
   },
   {
     id: 8,
-    title: "Finalis Business Case",
-    issuer: "SBM ITB",
-    date: "Okt 2024",
-    category: "Kompetisi",
-    src: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80",
-    alt: "Business Case ITB",
+    title: "Dialog Inklusif DEMA FEBI",
+    issuer: "DEMA x PMII FEBI",
+    date: "2024",
+    category: "Organisasi",
+    src: "/assets/sertifikat/NUR_AZIZAH_SAFRIYANI_SUSANTI_Sertifikat_Dialog_Inklusif_DEMA_FEBIxPMIIFEBI.jpg",
+    alt: "Sertifikat Dialog Inklusif DEMA FEBI",
   },
 ];
 
-// Calculate a sweeping 3D arch around the center point for both mobile and desktop
 const generatePanoramicCards = () => {
   const total = CERTIFICATES.length;
   const centerIndex = (total - 1) / 2;
@@ -201,14 +200,14 @@ function GalleryCard({ card, progress, isMobile }: GalleryCardProps) {
       >
         <div className="group relative h-full w-full overflow-hidden bg-white p-2.5 pb-4 max-md:p-2 max-md:pb-3 rounded-2xl transition-all duration-500 hover:shadow-2xl border border-[#D5E1ED] flex flex-col justify-between">
           {/* Certificate Image Frame */}
-          <div className="relative h-[65%] w-full overflow-hidden rounded-xl bg-[#EBF1F7]">
+          <div className="relative h-[65%] w-full overflow-hidden rounded-xl bg-[#EBF1F7] border border-[#DEE8F1]">
             <img
               src={item.src}
               alt={item.alt}
               draggable={false}
               className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
-            <div className="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-white/90 backdrop-blur-sm text-[10px] font-semibold text-[#3E556B] shadow-sm border border-white/60">
+            <div className="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-white/95 backdrop-blur-sm text-[10px] font-semibold text-[#3E556B] shadow-sm border border-white/60">
               {item.category}
             </div>
           </div>
@@ -296,13 +295,13 @@ export default function PanoramicSpreadHero() {
         >
           <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#EBF1F7] text-[#4A6277] border border-[#D5E1ED] text-xs font-semibold uppercase tracking-wider mb-3">
             <Award size={13} />
-            Galeri Kredensial & Prestasi
+            Galeri Kredensial & Sertifikat
           </span>
           <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-[#1E2E3E]">
             Honor & Capaian.
           </h2>
           <p className="mt-4 max-w-[48ch] text-xs sm:text-sm md:text-base font-normal text-[#556E84] leading-relaxed">
-            Scroll perlahan untuk membentangkan 8 sertifikat pilihan, mulai dari Juara LKTI UGM hingga Best Delegate MUN UI.
+            Scroll perlahan untuk membentangkan 8 sertifikat nyata, mulai dari Kejuaraan Robotika Nasional, CIMM IARFC, hingga kepanitiaan Galeri Investasi Syariah.
           </p>
         </motion.div>
       </div>

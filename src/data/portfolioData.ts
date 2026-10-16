@@ -1,170 +1,195 @@
 // ============================================================
-// Portfolio Data — Semua teks dalam Bahasa Indonesia
+// Portfolio Data — Nur Azizah Safriyani Susanti
 // ============================================================
 
-// ---------- Tipe ----------
 export interface Certificate {
-  id: number
-  title: string
-  description: string
-  date: string
-  image: string
-  category: 'Akademik' | 'Organisasi' | 'Kompetisi' | 'Seminar'
+  id: number;
+  title: string;
+  description: string;
+  date: string;
+  image: string;
+  category: 'Akademik' | 'Organisasi' | 'Kompetisi' | 'Seminar';
 }
 
 export interface Skill {
-  name: string
-  level: number // 0‑100
-  category: 'Technical' | 'Soft Skill' | 'Analisis'
+  name: string;
+  level: number;
+  category: 'Technical' | 'Soft Skill' | 'Analisis';
 }
 
 export interface Experience {
-  id: number
-  organization: string
-  role: string
-  period: string
-  description: string
+  id: number;
+  organization: string;
+  role: string;
+  period: string;
+  description: string;
 }
 
 export interface Education {
-  id: number
-  institution: string
-  degree: string
-  period: string
-  gpa?: string
+  id: number;
+  institution: string;
+  degree: string;
+  period: string;
+  gpa?: string;
 }
 
 export interface SocialLink {
-  platform: string
-  url: string
-  icon: string // lucide-react icon name
+  platform: string;
+  url: string;
+  icon: string;
 }
 
-// ---------- Sertifikat ----------
+// ---------- Sertifikat Asli Nur Azizah ----------
 export const certificates: Certificate[] = [
   {
     id: 1,
-    title: 'Juara 2 Lomba Karya Tulis Ilmiah Nasional',
+    title: 'Kejuaraan Robotika Nasional (KEJURNAS) 2023',
     description:
-      'Meraih Juara 2 dalam Lomba Karya Tulis Ilmiah tingkat nasional yang diselenggarakan oleh Universitas Gadjah Mada dengan tema "Inovasi Ekonomi Digital untuk Indonesia Maju".',
-    date: 'September 2025',
-    image: '/assets/sertifikat/lkti-ugm.jpg',
+      'Piagam Penghargaan resmi atas partisipasi dan capaian prestasi dalam Kejuaraan Robotika Nasional (KEJURNAS) tahun 2023.',
+    date: 'Tahun 2023',
+    image: '/assets/sertifikat/Piagam_Penghargaan_Kejuaraan_Robotika_Nasional_KEJURNAS_2023_Nur_Azizah.jpg',
     category: 'Kompetisi',
   },
   {
     id: 2,
-    title: 'Sertifikat Pelatihan Financial Modeling',
+    title: 'Sertifikasi CIMM (Certified Islamic Mutual Fund) — IARFC',
     description:
-      'Menyelesaikan pelatihan Financial Modeling & Valuation yang diselenggarakan oleh Bloomberg Indonesia bekerja sama dengan FEB.',
-    date: 'Juli 2025',
-    image: '/assets/sertifikat/financial-modeling.jpg',
+      'Sertifikat kompetensi profesional keuangan syariah CIMM yang diselenggarakan oleh International Association of Registered Financial Consultants (IARFC) Indonesia.',
+    date: 'Tahun 2025',
+    image: '/assets/sertifikat/Sertifikat_CIMM_IARFC_INDONESIA_Nur_Azizah.jpg',
     category: 'Akademik',
   },
   {
     id: 3,
-    title: 'Best Delegate MUN Universitas Indonesia',
+    title: 'Certificate of English Proficiency — Brilliant English Course',
     description:
-      'Mendapatkan penghargaan Best Delegate pada Model United Nations (MUN) yang diselenggarakan oleh Universitas Indonesia.',
-    date: 'Mei 2025',
-    image: '/assets/sertifikat/mun-ui.jpg',
-    category: 'Kompetisi',
-  },
-  {
-    id: 4,
-    title: 'Sertifikat Seminar Nasional Ekonomi Syariah',
-    description:
-      'Mengikuti Seminar Nasional Ekonomi Syariah dengan tema "Peran Ekonomi Syariah dalam Pembangunan Berkelanjutan" bersama narasumber dari Bank Indonesia.',
-    date: 'April 2025',
-    image: '/assets/sertifikat/seminar-syariah.jpg',
-    category: 'Seminar',
-  },
-  {
-    id: 5,
-    title: 'Penghargaan Mahasiswa Berprestasi FEB',
-    description:
-      'Meraih penghargaan sebagai Mahasiswa Berprestasi tingkat Fakultas Ekonomi dan Bisnis berdasarkan prestasi akademik dan non-akademik.',
-    date: 'Maret 2025',
-    image: '/assets/sertifikat/mawapres.jpg',
+      'Sertifikat kelulusan program bahasa Inggris intensif di Brilliant English Course, Kampung Inggris Pare.',
+    date: 'Tahun 2025',
+    image: '/assets/sertifikat/Certificate_Bahasa_Brilliant_English_Course_Nur_Azizah.jpg',
     category: 'Akademik',
   },
   {
-    id: 6,
-    title: 'Sertifikat Workshop Digital Marketing',
+    id: 4,
+    title: 'Panitia Kompetisi Trading — Diesnatalis GIS 2025',
     description:
-      'Menyelesaikan workshop intensif Digital Marketing & Social Media Strategy yang diselenggarakan oleh Google Indonesia.',
-    date: 'Januari 2025',
-    image: '/assets/sertifikat/digital-marketing.jpg',
+      'Sertifikat penghargaan sebagai panitia divisi Kompetisi Trading Pasar Modal dalam perayaan Diesnatalis Galeri Investasi Syariah (GIS).',
+    date: 'Tahun 2025',
+    image: '/assets/sertifikat/Sertifikat_Panitia_Trading_DIESNAT_GIS_2025.jpg',
+    category: 'Organisasi',
+  },
+  {
+    id: 5,
+    title: 'Panitia Seminar Nasional — Diesnatalis GIS 2025',
+    description:
+      'Sertifikat dedikasi sebagai panitia pelaksana Seminar Nasional Diesnatalis Galeri Investasi Syariah 2025.',
+    date: 'Tahun 2025',
+    image: '/assets/sertifikat/Sertifikat_Panitia_SEMNAS_DIETNAS_GIS_2025_Nur_Azizah.jpg',
+    category: 'Organisasi',
+  },
+  {
+    id: 6,
+    title: 'Seminar Nasional Pendidikan 2025 — UNESA',
+    description:
+      'Sertifikat kepesertaan aktif dalam Seminar Nasional Pendidikan yang diselenggarakan oleh Universitas Negeri Surabaya (UNESA).',
+    date: 'Tahun 2025',
+    image: '/assets/sertifikat/Sertifikat_Seminar_Nasioanl_Pendidikan_2025_UNESA_Nur_Azizah.jpg',
     category: 'Seminar',
   },
   {
     id: 7,
-    title: 'Ketua Pelaksana Seminar Ekonomi Kreatif',
+    title: 'Pelatihan Alat-alat Laboratorium Sains — UM',
     description:
-      'Memimpin kepanitiaan Seminar Ekonomi Kreatif yang dihadiri lebih dari 500 peserta dari berbagai universitas se-Indonesia.',
-    date: 'November 2024',
-    image: '/assets/sertifikat/seminar-ekraf.jpg',
-    category: 'Organisasi',
+      'Sertifikat keahlian pelatihan pengoperasian instrumen laboratorium sains modern di Universitas Negeri Malang (UM).',
+    date: 'Tahun 2024',
+    image: '/assets/sertifikat/Sertifikat_Pelatihan_Alat-alat_Lab_Sains_UM_Nur_Azizah.jpg',
+    category: 'Akademik',
   },
   {
     id: 8,
-    title: 'Finalis Business Case Competition',
+    title: 'Webinar Nasional Public Speaking & Communication',
     description:
-      'Menjadi finalis dalam Business Case Competition tingkat nasional yang diselenggarakan oleh SBM ITB dengan studi kasus perusahaan BUMN.',
-    date: 'Oktober 2024',
-    image: '/assets/sertifikat/business-case.jpg',
-    category: 'Kompetisi',
+      'Sertifikat pelatihan public speaking profesional, teknik negosiasi, dan komunikasi publik berskala nasional.',
+    date: 'Tahun 2025',
+    image: '/assets/sertifikat/Sertifikat_Webunar_Nasional_Public_Speaking_2025.jpg',
+    category: 'Seminar',
   },
-]
+  {
+    id: 9,
+    title: 'Dialog Inklusif Kepemimpinan Mahasiswa — DEMA FEBI x PMII',
+    description:
+      'Sertifikat penghargaan atas kontribusi dalam Dialog Inklusif Kepemimpinan Mahasiswa yang diselenggarakan oleh DEMA FEBI.',
+    date: 'Tahun 2024',
+    image: '/assets/sertifikat/NUR_AZIZAH_SAFRIYANI_SUSANTI_Sertifikat_Dialog_Inklusif_DEMA_FEBIxPMIIFEBI.jpg',
+    category: 'Organisasi',
+  },
+  {
+    id: 10,
+    title: 'Sertifikasi Ikatan Bankir Indonesia (IBI)',
+    description:
+      'Sertifikat kompetensi dasar perbankan dan integritas etika profesi bersama Ikatan Bankir Indonesia (IBI).',
+    date: 'Tahun 2025',
+    image: '/assets/sertifikat/Sertifikat_IBI_Nur_Azizah_Safriyani_Susanti.jpg',
+    category: 'Akademik',
+  },
+  {
+    id: 11,
+    title: 'Seminar Nasional Ekonomi & Karakter — Ponpes Al-Fithrah',
+    description:
+      'Sertifikat kepesertaan Seminar Nasional bertajuk penguatan karakter dan kemandirian ekonomi generasi muda.',
+    date: 'Tahun 2025',
+    image: '/assets/sertifikat/Sertifikat_Seminar_Nasional_2025_Ponpes_Al-Fithrah_Nur_Azizah.jpg',
+    category: 'Seminar',
+  },
+  {
+    id: 12,
+    title: 'Sertifikat PBAK FEBI 2024',
+    description:
+      'Sertifikat Pengenalan Budaya Akademik dan Kemahasiswaan Fakultas Ekonomi dan Bisnis Islam (FEBI).',
+    date: 'Tahun 2024',
+    image: '/assets/sertifikat/SERTIFIKAT_PBAK_FEBI_2024.jpg',
+    category: 'Organisasi',
+  },
+];
 
 // ---------- Keahlian ----------
 export const skills: Skill[] = [
-  { name: 'Microsoft Excel', level: 90, category: 'Technical' },
-  { name: 'Microsoft Word', level: 85, category: 'Technical' },
-  { name: 'Microsoft PowerPoint', level: 88, category: 'Technical' },
-  { name: 'Financial Analysis', level: 75, category: 'Analisis' },
-  { name: 'Akuntansi', level: 80, category: 'Analisis' },
-  { name: 'Public Speaking', level: 70, category: 'Soft Skill' },
-  { name: 'Leadership', level: 78, category: 'Soft Skill' },
-  { name: 'Digital Marketing', level: 72, category: 'Technical' },
-  { name: 'SPSS', level: 68, category: 'Analisis' },
-  { name: 'Data Analysis', level: 74, category: 'Analisis' },
-]
+  { name: 'Financial Modeling & Valuation', level: 90, category: 'Analisis' },
+  { name: 'Pasar Modal Syariah', level: 88, category: 'Analisis' },
+  { name: 'Microsoft Excel (Advanced)', level: 92, category: 'Technical' },
+  { name: 'Instrumen Sains & Laboratorium', level: 85, category: 'Technical' },
+  { name: 'Public Speaking & Moderasi', level: 88, category: 'Soft Skill' },
+  { name: 'Negosiasi & Kepemimpinan Tim', level: 86, category: 'Soft Skill' },
+  { name: 'English Communication', level: 82, category: 'Technical' },
+  { name: 'Manajemen Acara & Kepanitiaan', level: 90, category: 'Soft Skill' },
+];
 
 // ---------- Pengalaman Organisasi ----------
 export const experiences: Experience[] = [
   {
     id: 1,
-    organization: 'Badan Eksekutif Mahasiswa FEB',
-    role: 'Kepala Departemen Pendidikan & Keilmuan',
-    period: 'Januari 2025 – Sekarang',
+    organization: 'Galeri Investasi Syariah (GIS)',
+    role: 'Panitia Divisi Trading & Seminar Nasional',
+    period: '2024 – 2025',
     description:
-      'Memimpin departemen yang bertanggung jawab atas program-program pengembangan akademik dan keilmuan mahasiswa FEB, termasuk menyelenggarakan kajian ilmiah, diskusi publik, dan pelatihan soft skill.',
+      'Bertanggung jawab atas teknis pelaksanaan kompetisi trading pasar modal syariah dan penyelenggaraan seminar nasional investasi.',
   },
   {
     id: 2,
-    organization: 'Himpunan Mahasiswa Akuntansi',
-    role: 'Koordinator Divisi Hubungan Masyarakat',
-    period: 'Agustus 2024 – Desember 2024',
+    organization: 'Dewan Eksekutif Mahasiswa (DEMA FEBI)',
+    role: 'Pengurus & Koordinator Kegiatan',
+    period: '2024 – Sekarang',
     description:
-      'Mengelola komunikasi dan relasi dengan pihak eksternal, termasuk sponsor, media, dan organisasi mitra. Berhasil menjalin kerja sama dengan 12 perusahaan untuk program magang mahasiswa.',
+      'Aktif menginisiasi dialog inklusif kepemimpinan mahasiswa serta program pemberdayaan keilmuan dan advokasi sosial.',
   },
   {
     id: 3,
-    organization: 'Kelompok Studi Pasar Modal',
-    role: 'Anggota Aktif & Mentor',
-    period: 'Maret 2024 – Sekarang',
+    organization: 'PMII Rayon FEBI',
+    role: 'Kader Aktif & Penggerak Diskusi',
+    period: '2024 – Sekarang',
     description:
-      'Aktif dalam kegiatan edukasi pasar modal, analisis saham, dan simulasi trading. Menjadi mentor bagi anggota baru dalam memahami dasar-dasar investasi dan analisis fundamental.',
+      'Berpartisipasi aktif dalam kajian keislaman, kebangsaan, dan diskusi inklusif pengembangan nalar kritis mahasiswa.',
   },
-  {
-    id: 4,
-    organization: 'Volunteer Mengajar Indonesia',
-    role: 'Relawan Pengajar',
-    period: 'Juni 2024 – Agustus 2024',
-    description:
-      'Mengajar mata pelajaran Ekonomi dan Matematika untuk siswa SMA di daerah tertinggal selama program relawan mengajar musim panas.',
-  },
-]
+];
 
 // ---------- Pendidikan ----------
 export const education: Education[] = [
@@ -182,36 +207,20 @@ export const education: Education[] = [
     period: '2020 – 2023',
     gpa: 'Nilai Rata-rata: 92.5',
   },
-]
+];
 
 // ---------- Tautan Sosial ----------
 export const socialLinks: SocialLink[] = [
-  {
-    platform: 'Instagram',
-    url: 'https://instagram.com/ziacantikk',
-    icon: 'Instagram',
-  },
-  {
-    platform: 'LinkedIn',
-    url: 'https://linkedin.com/in/ziacantikk',
-    icon: 'Linkedin',
-  },
-  {
-    platform: 'Email',
-    url: 'mailto:zia@example.com',
-    icon: 'Mail',
-  },
-  {
-    platform: 'GitHub',
-    url: 'https://github.com/ziacantikk',
-    icon: 'Github',
-  },
-]
+  { platform: 'Instagram', url: 'https://instagram.com', icon: 'Instagram' },
+  { platform: 'LinkedIn', url: 'https://linkedin.com', icon: 'Linkedin' },
+  { platform: 'Email', url: 'mailto:azizah@example.com', icon: 'Mail' },
+  { platform: 'GitHub', url: 'https://github.com', icon: 'Github' },
+];
 
 // ---------- Profil ----------
 export const profile = {
-  name: 'Zia Cantika',
+  name: 'Nur Azizah Safriyani Susanti',
   tagline: 'Mahasiswi Akuntansi · FEB Universitas Brawijaya',
-  bio: 'Halo! Saya Zia, mahasiswi Akuntansi semester 5 di Fakultas Ekonomi dan Bisnis Universitas Brawijaya. Saya memiliki ketertarikan mendalam di bidang keuangan, akuntansi, dan analisis data. Saat ini aktif di berbagai organisasi kampus dan terus mengembangkan diri melalui kompetisi serta pelatihan profesional.',
-  avatar: '/placeholder.svg',
-}
+  bio: 'Halo! Saya Nur Azizah, mahasiswi yang berfokus pada analisis keuangan, pasar modal syariah, dan tata kelola ekonomi. Memiliki rekam jejak aktif dalam kompetisi robotika nasional, sertifikasi IARFC, serta kepanitiaan Galeri Investasi Syariah.',
+  avatar: '/assets/foto/profil.jpg',
+};
